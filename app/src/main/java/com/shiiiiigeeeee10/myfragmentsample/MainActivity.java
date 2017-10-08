@@ -14,12 +14,10 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemFragment.OnListFragmentInteractionListener mListener;
 
-    private String[] myDataset = new String[20];
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_item_list);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mRecyclerView.setHasFixedSize(true);
@@ -27,10 +25,6 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        for (int i = 0; i < myDataset.length; i++) {
-            myDataset[i] = "Data_0" + String.valueOf(i);
-        }
 
         mAdapter = new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener);
         mRecyclerView.setAdapter(mAdapter);
