@@ -1,1 +1,2 @@
 # MyFragmentSample
+Androidでフラグメントを使ったサンプル
